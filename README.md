@@ -1,1 +1,8 @@
 > There is currently no ready-to-use open-source Webots-Betaflight SITL integration (unlike the official Gazebo target or community bridges available for RealFlight and X-Plane). However, because Betaflight SITL (betaflight_SITL.elf) communicates via standard UDP sockets rather than simulator-specific APIs, implementing a custom Webots bridge is straightforward. You can achieve this by writing a custom Webots C or Python Robot Controller that acts as the physics-to-firmware interface.
+
+# Build betaflight
+```sh
+cd betaflight/
+make arm_sdk_install
+make TARGET=SITL
+```

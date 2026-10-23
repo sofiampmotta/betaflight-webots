@@ -1,0 +1,48 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/Floor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Pavement.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/Grass.proto"
+EXTERNPROTO "../protos/Crazyflie.proto"
+
+WorldInfo {
+  info [
+    "Essa simulacao pode ser usada para testar o sitl com betaflight"
+  ]
+  title "betaflight test"
+  basicTimeStep 2
+  FPS 20
+}
+Viewpoint {
+  orientation -0.20619025910799313 0.3275562796312732 0.9220588163035468 1.1980277042270002
+  position -0.20830292099479775 -0.42868505634309795 0.19435549933741986
+  follow "Crazyflie"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  translation 0 0 0.001
+  name "flightFloor"
+  size 2.3 2.3
+  appearance Pavement {
+    type "black stone"
+  }
+}
+Floor {
+  name "roomFloor"
+  size 20 20
+  appearance Grass {
+  }
+}
+Crazyflie {
+  hidden linearVelocity_0 -1.0735591387305593e-18 -3.5602707202709786e-19 -7.904881271682948e-16
+  hidden angularVelocity_0 9.574184193813952e-18 -9.378528264093935e-17 -9.039878227030914e-18
+  translation 8.229995998833737e-18 1.142087108520097e-18 0.015998773750000007
+  rotation 0.02342733008663514 -0.020002164632326448 -0.99952542419642 8.992827562883341e-17
+  controller "betaflight_vehicle_controller"
+}
